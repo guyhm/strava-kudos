@@ -2,6 +2,9 @@ name: Give Strava Kudos
 
 on: [push]
 
+        env:
+              STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
+              STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
 
 jobs:
   run-kudos-cron:
@@ -15,10 +18,7 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: playwright install
-        env:
-              STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
-              STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
-              #STRAVA_PASSWORD: 'test  password'
+
       - run: echo "checking if variable is set $MY_STRAVA_PASSWORD"
       - run: python give_kudos.py
         
