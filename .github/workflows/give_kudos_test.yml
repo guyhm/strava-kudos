@@ -2,13 +2,13 @@ name: Give Strava Kudos
 
 on: [push]
 
-env:
-      STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
-      STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
+
 
 jobs:
-  run-kudos-cron:
     runs-on: ubuntu-latest
+    env:
+      STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
+      STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3 
