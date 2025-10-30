@@ -16,9 +16,9 @@ jobs:
       - run: pip install -r requirements.txt
       - run: playwright install
         env:
-              STRAVA_EMAIL: ${{ secrets.STRAVA_EMAIL }}
-              #STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
-              STRAVA_PASSWORD: 'test  password'
+              STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
+              STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
+              #STRAVA_PASSWORD: 'test  password'
       - run: echo "checking if variable is set $STRAVA_PASSWORD"
       - run: python give_kudos.py
         
