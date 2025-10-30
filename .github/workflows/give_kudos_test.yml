@@ -19,7 +19,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: playwright install
 
-      - run: echo "checking if variable is set $MY_STRAVA_PASSWORD"
+      - run: echo "checking if variable is set $STRAVA_PASSWORD"
       - run: python give_kudos.py
         
 
