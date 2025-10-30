@@ -2,7 +2,7 @@ name: Give Strava Kudos
 
 on:
   schedule:
-    - cron: "30 5-23 * * *"
+    - cron: "*/5 5-23 * * *"
   workflow_dispatch:
 
 env:
@@ -22,4 +22,5 @@ jobs:
       - run: playwright install
       - run: python give_kudos.py
         
+
 
