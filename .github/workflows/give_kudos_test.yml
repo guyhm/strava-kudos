@@ -18,6 +18,7 @@ jobs:
         env:
               STRAVA_EMAIL: ${{ secrets.STRAVA_EMAIL }}
               STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
+      - run: echo "checking if variable is set $STRAVA_PASSWORD"
       - run: python give_kudos.py
         
 
