@@ -2,9 +2,9 @@ name: Give Strava Kudos
 
 on: [push]
 
-        env:
-              STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
-              STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
+env:
+      STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
+      STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
 
 jobs:
   run-kudos-cron:
