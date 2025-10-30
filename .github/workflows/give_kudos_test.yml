@@ -2,9 +2,7 @@ name: Give Strava Kudos
 
 on: [push]
 
-env:
-  STRAVA_EMAIL: ${{ secrets.STRAVA_EMAIL }}
-  STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
+
 jobs:
   run-kudos-cron:
     runs-on: ubuntu-latest
@@ -17,6 +15,9 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: playwright install
+        env:
+              STRAVA_EMAIL: ${{ secrets.STRAVA_EMAIL }}
+              STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
       - run: python give_kudos.py
         
 
