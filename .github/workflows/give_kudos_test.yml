@@ -6,7 +6,6 @@ on: [push]
 
 jobs:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     env:
       STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
