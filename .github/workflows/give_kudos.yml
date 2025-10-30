@@ -2,7 +2,7 @@ name: Give Strava Kudos
 
 on:
   schedule:
-    - cron: "*/5 5-23 * * *"
+    - cron: "30 */24 1 1 *"
   workflow_dispatch:
 
 env:
@@ -10,17 +10,18 @@ env:
   STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
 jobs:
   run-kudos-cron:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3 
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9.10'
+          python-version: '>=3.9.10'
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: playwright install
       - run: python give_kudos.py
         
+
 
 
