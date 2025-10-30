@@ -6,10 +6,12 @@ on: [push]
 
 jobs:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     env:
       STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
       STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
-    timeout-minutes: 10
+    
     steps:
       - uses: actions/checkout@v3 
       - uses: actions/setup-python@v4
