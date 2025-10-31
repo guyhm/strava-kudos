@@ -17,7 +17,8 @@ class KudosGiver:
         if self.EMAIL is None or self.PASSWORD is None:
             raise Exception("Must set environ variables EMAIL AND PASSWORD. \
                 e.g. run export STRAVA_EMAIL=YOUR_EMAIL")
-
+        print(self.EMAIL)
+        print(self.PASSWORD)
         self.max_run_duration = max_run_duration
         self.start_time = time.time()
         self.num_entries = 100
@@ -185,3 +186,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
