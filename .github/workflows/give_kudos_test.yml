@@ -3,15 +3,15 @@ name: Give Strava Kudos test
 on: 
     workflow_dispatch:
 
-
+env: strava
+  STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
+  STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
 
 jobs:
     myjob:
         runs-on: ubuntu-latest
     
-        env:
-          STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
-          STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
+
         
         steps:
           - uses: actions/checkout@v3 
