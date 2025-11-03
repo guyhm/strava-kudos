@@ -3,7 +3,8 @@ name: Give Strava Kudos test
 on: 
     workflow_dispatch:
 
-env: strava
+env: 
+    name: strava
   STRAVA_EMAIL: ${{ secrets.MY_STRAVA_EMAIL }}
   STRAVA_PASSWORD: ${{ secrets.MY_STRAVA_PASSWORD }}
 
