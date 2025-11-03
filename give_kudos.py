@@ -9,8 +9,9 @@ BASE_URL = "https://www.strava.com/"
 EMAIL = os.environ.get('STRAVA_EMAIL')
 PASSWORD = os.environ.get('STRAVA_PASSWORD')
 
-if self.EMAIL is None or self.PASSWORD is None:
+if EMAIL is None or PASSWORD is None:
     raise Exception("Must set environ variables EMAIL AND PASSWORD. \
         e.g. run export STRAVA_EMAIL=YOUR_EMAIL")
-print(self.EMAIL)
-print(self.PASSWORD)
+print(EMAIL)
+print(PASSWORD)
+
