@@ -41,8 +41,7 @@ class KudosGiver:
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
         self.page.get_by_role("button", name="Log In").click()
         print ("login done... on to password button")
-        #self.page.get_by_role("button", name="Use password instead").click()
-        self.page.get_by_test_id("use-password-cta").click()
+        await self.page.get_by_role("button", name="Use password instead").click()
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
         self.page.get_by_role("button", name="Log In").click()
         print("---Logged in!!---")
@@ -190,6 +189,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
