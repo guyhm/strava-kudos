@@ -1,0 +1,28 @@
+name: Playwright Login Test
+
+on:push:branches: [ "main" ]pull_request:branches: [ "main" ]workflow_dispatch:jobs:test:runs-on: ubuntu-lateststeps:- name: Checkout repositoryuses: actions/checkout@v4- name: Set up Python
+
+uses: actions/setup-python@v5
+  with:
+    python-version: '3.x'
+
+- name: Install dependencies
+  run: |
+    # Install the Playwright Python library
+    pip install playwright pytest asyncio
+
+- name: Install Playwright browsers
+  # This step installs the necessary Chromium, Firefox, and WebKit browsers
+  run: |
+    playwright install chromium
+
+- name: Run E2E Test
+  env:
+    # NOTE: This is how GitHub Secrets are accessed and passed to the script
+    # You must define MY_EMAIL and MY_PASSWORD secrets in your repository settings
+    MY_EMAIL: ${{ secrets.MY_EMAIL }}
+    MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+  run: |
+    # Execute the python script. 
+    # The script will read the secrets from the environment variables above.
+    python e2e_login_test.py
