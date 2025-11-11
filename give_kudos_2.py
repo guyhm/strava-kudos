@@ -9,7 +9,7 @@ EMAIL = os.environ.get("MY_EMAIL")
 PASSWORD = os.environ.get("MY_PASSWORD")
 
 # Define a hypothetical secure testing URL
-BASE_URL = "https://example.com/login-test"
+BASE_URL = "https://www.strava.com/login"
 
 
 async def run(playwright):
