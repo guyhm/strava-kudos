@@ -30,7 +30,7 @@ async def run(playwright):
     
                 # Playwright ensures the element is ready before typing (auto-waiting).
         # Using role and label is the most robust way to locate input fields.
-        await page.get_by_label("Email Address").fill(EMAIL)
+        await page.get_by_label("Email").fill(EMAIL)
         
         # Explicitly wait for the main form container to be visible
       #  await page.wait_for_selector('form#login-form-container', state='visible', timeout=10000)
