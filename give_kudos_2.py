@@ -27,13 +27,17 @@ async def run(playwright):
         print(f"1. Navigating to {BASE_URL}")
         # Always wait for the page to load completely
         await page.goto(BASE_URL, wait_until="domcontentloaded")
+    
+                # Playwright ensures the element is ready before typing (auto-waiting).
+        # Using role and label is the most robust way to locate input fields.
+        await page.get_by_label("Email Address").fill(EMAIL)
         
         # Explicitly wait for the main form container to be visible
-        await page.wait_for_selector('form#login-form-container', state='visible', timeout=10000)
-        print("   Page loaded successfully.")
+      #  await page.wait_for_selector('form#login-form-container', state='visible', timeout=10000)
+       # print("   Page loaded successfully.")
 
         # --- Handle the 'Use Password' Option (Simulating Strava's UI requirement) ---
-        print("2. Checking for 'Use Password Option'...")
+      #  print("2. Checking for 'Use Password Option'...")
         
         # Use a flexible locator that waits for the element to be available in the DOM.
         # This simulates a click required before accessing the email/password fields.
@@ -52,9 +56,7 @@ async def run(playwright):
         # --- Input Credentials ---
         print("3. Entering credentials...")
         
-        # Playwright ensures the element is ready before typing (auto-waiting).
-        # Using role and label is the most robust way to locate input fields.
-        await page.get_by_label("Email Address").fill(EMAIL)
+)
         await page.get_by_label("Password").fill(PASSWORD)
 
         # Ensure the Sign In button is ready before clicking
