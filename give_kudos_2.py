@@ -21,7 +21,7 @@ async def run(playwright):
         return
 
     browser = await playwright.chromium.launch(headless=True)
-    page = browser.new_page()
+    page = await browser.new_page()
 
     try:
         print(f"1. Navigating to {BASE_URL}")
