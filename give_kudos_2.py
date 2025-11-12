@@ -29,7 +29,7 @@ async def run(playwright):
         await page.goto(BASE_URL, wait_until="domcontentloaded")
         
         # Explicitly wait for the main form container to be visible
-        await page.wait_for_selector('main#login-form-container', state='visible', timeout=10000)
+        await page.wait_for_selector('form#login-form-container', state='visible', timeout=10000)
         print("   Page loaded successfully.")
 
         # --- Handle the 'Use Password' Option (Simulating Strava's UI requirement) ---
