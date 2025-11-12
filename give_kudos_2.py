@@ -56,7 +56,7 @@ async def run(playwright):
         # --- Input Credentials ---
         print("3. Entering credentials...")
         
-)
+
         await page.get_by_label("Password").fill(PASSWORD)
 
         # Ensure the Sign In button is ready before clicking
